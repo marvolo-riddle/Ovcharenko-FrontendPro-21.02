@@ -7,7 +7,7 @@ console.log(sum);
 //
 //
 //
-//2 частина. Я так зрозуміла, що потрібно перетворити у масив
-let numbers = "2 4 3 1 3";
-let splitNumbers = numbers.split(" ");
-console.log(splitNumbers);
+//2 частина
+let number = 24313;
+let array = ("" + number).split("").map(Number);
+console.log(array);
