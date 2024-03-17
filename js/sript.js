@@ -1,14 +1,9 @@
-let numOrStr = prompt("input number or string");
-switch (true) {
-  case numOrStr === null:
-    alert("Ви скасували");
-    break;
-  case numOrStr.trim() === "":
-    alert("Empty string");
-    break;
-  case isNaN(+numOrStr):
-    alert(" number is Ba_NaN");
-    break;
-  default:
-    alert("Ok!");
+let length = parseInt(prompt("Яка буде довжина нашого масиву?"));
+let array = [];
+for (let i = 0; i < length; i++) {
+  let element = parseInt(prompt("Введіть елемент масиву:"));
+  array.push(element);
 }
+array.sort();
+array.splice(1, 3);
+alert("Масив:" + array);
