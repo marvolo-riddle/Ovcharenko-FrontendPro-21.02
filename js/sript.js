@@ -12,37 +12,35 @@ if (userBirth === null) {
     } else {
       const age = 2024 - userBirth;
       let message = "Ваш вік: " + age + " років.\n";
-      if (city === "Київ" || city === "Вашингтон" || city === "Лондон") {
-        let country = "";
-        switch (city) {
-          case "Київ":
-            country = "України";
-            break;
-          case "Вашингтон":
-            country = "США";
-            break;
-          case "Лондон":
-            country = "Великої Британії";
-            break;
-          default:
-            country = "цієї країни";
-            break;
-        }
-        message += "Ти живеш у столиці " + country + ".";
-      } else {
-        message += "Ти живеш у місті " + city + ".";
+      //
+      let championName = "";
+      if (favoriteSport === "Футбол") {
+        championName = "Ліонель Мессі";
+      } else if (favoriteSport === "Теніс") {
+        championName = "Рафаель Надаль";
+      } else if (favoriteSport === "Формула1") {
+        championName = "Макс Ферстаппен";
       }
-      let champions = {
-        футбол: "Ліонель Мессі",
-        теніс: "Рафаель Надаль",
-        формула1: "Макс Ферстаппен",
-      };
-      if (favoriteSport.toLowerCase() in champions) {
-        let championName = champions[favoriteSport.toLowerCase()];
-        message += "\nКруто! Хочеш стати " + championName + "?";
-      } else {
-        message += "\nКруто! Але хто твій улюблений спортсмен?";
+
+      if (championName !== "") {
+        message += "\nКруто! Хочеш стати як" + championName + "?";
       }
+      //
+      switch (city) {
+        case "Київ":
+          message += "\nТи живеш у столиці України.";
+          break;
+        case "Вашингтон":
+          message += "\nТи живеш у столиці США.";
+          break;
+        case "Лондон":
+          message += "\nТи живеш у столиці Великої Британії.";
+          break;
+        default:
+          message += "\nТи живеш у місті " + city + ".";
+          break;
+      }
+      //
       alert(message);
     }
   }
