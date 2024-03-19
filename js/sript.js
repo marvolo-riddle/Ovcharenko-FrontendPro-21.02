@@ -23,7 +23,7 @@ let isPrime = true;
 if (number3 <= 1) {
   isPrime = false;
 } else {
-  for (let i = 2; i < number; i++) {
+  for (let i = 2; i < number3; i++) {
     if (number3 % i === 0) {
       isPrime = false;
       break;
