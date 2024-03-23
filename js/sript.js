@@ -1,10 +1,12 @@
-function removeElement(array, item) {
-  const index = array.indexOf(item);
-  if (index !== -1) {
-    array.splice(index, 1);
+function generateKey(length, characters) {
+  let key = "";
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charactersLength);
+    key += characters.charAt(randomIndex);
   }
+  return key;
 }
-//
-const array = [1, 2, 3, 4, 5, 6, 7];
-removeElement(array, 5);
-console.log(array);
+const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+const key = generateKey(16, characters);
+console.log(key);
