@@ -1,12 +1,15 @@
-function generateKey(length, characters) {
-  let key = "";
-  const charactersLength = characters.length;
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * charactersLength);
-    key += characters.charAt(randomIndex);
+function power(num, degree) {
+  if (degree === 0) {
+    return 1;
+  } else if (degree === 1) {
+    return num;
+  } else if (degree < 0) {
+    return 1 / power(num, -degree);
+  } else {
+    return num * power(num, degree - 1);
   }
-  return key;
 }
-const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
-const key = generateKey(16, characters);
-console.log(key);
+let number = parseFloat(prompt("Введіть число: "));
+let powerOf = parseInt(prompt("Введіть ступінь: "));
+let result = power(number, powerOf);
+alert(`${number} в ступені ${powerOf} дорівнює ${result}`);
